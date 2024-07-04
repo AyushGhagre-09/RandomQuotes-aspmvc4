@@ -1,5 +1,6 @@
 node {
     def msBuildTool = tool 'msbuild-2019'
+    println msBuildTool
     try {
         stage('Checkout SCM') {
             // Checkout the source code from the SCM repository
