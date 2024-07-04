@@ -14,7 +14,7 @@ node {
 
         stage('Build Solution with MSBuild') {
             // Build the solution using MSBuild and run OctoPack
-            bat "${msBuildTool}\\MSBuild.exe RandomQuotes.sln /p:RunOctoPack=true /p:OctoPackPackageVersion=1.0.${BUILD_NUMBER} /p:OctoPackEnforceAddingFiles=true"
+               bat "\"${msBuildTool}\\MSBuild.exe\" RandomQuotes.sln /p:RunOctoPack=true /p:OctoPackPackageVersion=1.0.${BUILD_NUMBER} /p:OctoPackEnforceAddingFiles=true"
 
         }
 
