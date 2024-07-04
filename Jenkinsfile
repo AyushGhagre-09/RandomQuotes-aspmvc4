@@ -1,4 +1,5 @@
 node {
+    def msBuildTool = tool 'msbuild-2019'
     try {
         stage('Checkout SCM') {
             // Checkout the source code from the SCM repository
@@ -12,7 +13,7 @@ node {
 
         stage('Build Solution with MSBuild') {
             // Build the solution using MSBuild and run OctoPack
-            bat 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\MSBuild\\Current\\Bin\\MSBuild.exe RandomQuotes.sln /p:RunOctoPack=true /p:OctoPackPackageVersion=1.0.${BUILD_NUMBER} /p:OctoPackEnforceAddingFiles=true'
+            bat '${msBuildTool}\\MSBuild.exe RandomQuotes.sln /p:RunOctoPack=true /p:OctoPackPackageVersion=1.0.${BUILD_NUMBER} /p:OctoPackEnforceAddingFiles=true'
         }
 
         stage('Run NUnit Tests') {
