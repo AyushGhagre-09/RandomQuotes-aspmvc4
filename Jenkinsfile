@@ -22,7 +22,7 @@ node {
 
         stage('Publish Test Results') {
             // Publish test results to Jenkins
-            junit 'TestResult.xml'
+            junit keepLongStdio: true, testResults: 'TestResult.xml', allowEmptyResults: true
         }
     } catch (Exception e) {
         // Handle exceptions
