@@ -7,10 +7,7 @@ node {
             checkout scm
         }
 
-        stage('Restore NuGet Packages') {
-            // Restore NuGet packages
-           // bat 'C:\\nuget\\nuget.exe restore RandomQuotes.sln'
-        }
+       
 
         stage('Build Solution with MSBuild') {
             // Build the solution using MSBuild and run OctoPack
