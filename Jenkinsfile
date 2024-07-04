@@ -7,7 +7,7 @@ node {
 
         stage('Restore NuGet Packages') {
             // Restore NuGet packages
-            bat 'C:\\nuget\\nuget.exe restore RandomQuotes.sln'
+           // bat 'C:\\nuget\\nuget.exe restore RandomQuotes.sln'
         }
 
         stage('Build Solution with MSBuild') {
